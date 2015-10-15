@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
 
   spec.add_dependency 'activesupport', '~> 4.2'
+  spec.add_dependency 'activemodel'
   spec.add_dependency 'statsd-instrument'
   spec.add_dependency 'nunes'
 

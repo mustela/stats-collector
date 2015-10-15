@@ -20,7 +20,7 @@ module StatsCollector
         StatsdMonitor.extend(::StatsD::Instrument)
 
         STATSD_REQUEST_METRICS.each do |name, code|
-          StatsdMonitor.statsd_count_if(:call, name, tags: Railtie::STATSD_TAGS) do |status, _env, _body|
+          StatsdMonitor.statsd_count_if(:call, name) do |status, _env, _body|
             status.to_i == code
           end
         end
