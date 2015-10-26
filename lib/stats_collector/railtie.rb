@@ -4,6 +4,6 @@ module StatsCollector
 
     initializer 'stats_collector.insert_middleware' do |app|
       app.config.middleware.use 'StatsCollector::StatsdMonitor'
-    end
+    end if StatsCollector.configuration.stats_enabled
   end
 end
